@@ -1,7 +1,33 @@
 [![Build Status](https://travis-ci.org/F-Stack/f-stack.svg?branch=master)](https://travis-ci.org/F-Stack/f-stack)
 
-# F-Stack
-![](F-Stack.png)
+# Z-Stack
+Data centers require high-performance and efficient
+networks for fast and reliable communication between appli-
+cations. TCP/IP-based networking still plays a dominant role
+in data center networking to support a wide range of Layer-
+4 and Layer-7 applications, such as middleboxes and cloud-
+based microservices. However, traditional kernel-based TCP/IP
+stacks face performance challenges due to overheads such as
+context switching, interrupts, and copy. To address these issues,
+we introduce Z-stack, a high-performance user-space TCP/IP
+stack with a zero-copy design. Utilizing DPDK’s polling mode
+driver, Z-stack bypasses the kernel and moves packets between
+the NIC and the stack in user space, eliminating the overhead
+associated with kernel processing. Z-stack employs the polling-
+based packet processing that improves performance under high
+loads, and eliminates receive live locks compared to interrupt-
+driven packet processing. By implementing a zero-copy socket
+design, Z-stack eliminates copies when moving data between the
+user application and the protocol stack, which further minimizes
+latency and improves throughput. In addition, Z-stack seamlessly
+integrates with shared memory processing within the node,
+eliminating duplicate protocol processing and serialization/dese-
+rialization overhead. Z-stack is implemented on top of F-stack,
+which integrates FreeBSD’s proven TCP/IP stack, providing a
+POSIX-compliant solution for efficient data center networking,
+improving performance across a variety of cloud use cases.
+
+<!-- ![](F-Stack.png)
 
 ## Introduction
 
@@ -26,7 +52,7 @@ With the fast growth of Tencent Cloud more and more of our services needed highe
 
 With the rapid development of all kinds of applications, in order to help different APPs quick and easily use F-Stack, F-Stack has integrated Nginx, Redis and other commonly used APPs, and a micro thread framework, and provides a standard Epoll/Kqueue interface.
 
-Currently, besides authorized DNS server of DNSPod, there are various products in Tencent Cloud has used the F-Stack, such as HttpDNS (D+), COS access module, CDN access module, etc..
+Currently, besides authorized DNS server of DNSPod, there are various products in Tencent Cloud has used the F-Stack, such as HttpDNS (D+), COS access module, CDN access module, etc.. -->
 
 ## Quick Start
 
@@ -121,7 +147,7 @@ Currently, besides authorized DNS server of DNSPod, there are various products i
     make install    # On Linux
     #gmake install   # On FreeBSD
 
-#### Nginx
+<!-- #### Nginx
 
     cd app/nginx-1.25.2
     bash ./configure --prefix=/usr/local/nginx_fstack --with-ff_module
@@ -182,14 +208,14 @@ RPS (Connection:Keep-Alive, Small data packet) test data
 ![](RPS.png)
 
 Bandwidth (Connection:Keep-Alive, 3.7k bytes data packet) test data
-![](Bandwidth.png)
+![](Bandwidth.png) -->
 
 ## Licenses
 See [LICENSE](LICENSE)
 
-## Join us
+<!-- ## Join us
 
 Tencent Cloud F-Stack team developed F-Stack which is a general network framework based on DPDK and provides ultra high network performance. We are here looking for more and more talented people with great passion on technology to join us. You would have the chance to work with brightest minds on this planet and help Tencent cloud and F-stack continuously evolve. Send us your resume or refer your friend to us if you are interested in joining us.
 
 Open Positions: Software engineer(C/C++), Web developer, IOS/Android developer, Product Manager, Operating Manager, etc.
-Contact: Please send your resume to [us](mailto:allanhuang@tencent.com)
+Contact: Please send your resume to [us](mailto:allanhuang@tencent.com) -->
